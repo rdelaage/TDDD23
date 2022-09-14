@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scifi_space_rpg_tiles_lpcized.png-3eeb27c0a90daa901083944afb69687c.stex"
+path="res://.import/scifi_space_tiles.png-e777b908c763a2427c8b6e7130aba3e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scifi_space_rpg_tiles_lpcized.png"
-dest_files=[ "res://.import/scifi_space_rpg_tiles_lpcized.png-3eeb27c0a90daa901083944afb69687c.stex" ]
+source_file="res://scifi_space_tiles.png"
+dest_files=[ "res://.import/scifi_space_tiles.png-e777b908c763a2427c8b6e7130aba3e5.stex" ]
 
 [params]
 
