@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/invert_gravity.png-609ca2d0c0ab8eaad31e5ffaf6649202.stex"
+path="res://.import/oneway.png-99cbcc21c6c69f004f225902887a2669.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://invert_gravity.png"
-dest_files=[ "res://.import/invert_gravity.png-609ca2d0c0ab8eaad31e5ffaf6649202.stex" ]
+source_file="res://assets/tiles/oneway.png"
+dest_files=[ "res://.import/oneway.png-99cbcc21c6c69f004f225902887a2669.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scifi_space_tiles.png-e777b908c763a2427c8b6e7130aba3e5.stex"
+path="res://.import/invert_gravity.png-4dbb712093d8498ccc224f6420d7de35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scifi_space_tiles.png"
-dest_files=[ "res://.import/scifi_space_tiles.png-e777b908c763a2427c8b6e7130aba3e5.stex" ]
+source_file="res://assets/hints/invert_gravity.png"
+dest_files=[ "res://.import/invert_gravity.png-4dbb712093d8498ccc224f6420d7de35.stex" ]
 
 [params]
 

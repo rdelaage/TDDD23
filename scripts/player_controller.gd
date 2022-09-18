@@ -63,3 +63,7 @@ func _physics_process(delta):
 func reset():
 	position.x = 35
 	position.y = 558
+
+func camera_animation_y():
+	print("move")
+	$AnimationPlayer.play("top")
