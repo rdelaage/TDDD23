@@ -4,44 +4,50 @@ var speed: int = 200
 var jump_speed: int = 200
 var gravity: int = 200
 var velocity = Vector2()
+var double_jump_used: bool = false
 
 onready var _animated_sprite = $AnimatedSprite
 
 func get_input(delta):
-	if is_on_floor() or is_on_ceiling():
-		velocity.x = 0
+	if double_jump_used:
+		if is_on_floor() and rotation_degrees == 0:
+			double_jump_used = false
+		elif is_on_ceiling() and rotation_degrees != 0:
+			double_jump_used = false
+			
+	velocity.x = 0
 	
 	if Input.is_action_pressed("move_right"):
+		velocity.x += speed
 		if rotation_degrees == 0:
-			if is_on_floor():
-				velocity.x += speed
-				_animated_sprite.play("run_right")
+			_animated_sprite.play("run_right")
 		else:
-			if is_on_ceiling():
-				velocity.x += speed
-				_animated_sprite.play("run_left")
+			_animated_sprite.play("run_left")
 	else:
 		_animated_sprite.stop()
 		
 	if Input.is_action_pressed("move_left"):
+		velocity.x -= speed
 		if rotation_degrees == 0:
-			if is_on_floor():
-				velocity.x -= speed
-				_animated_sprite.play("run_left")
+			_animated_sprite.play("run_left")
 		else:
-			if is_on_ceiling():
-				velocity.x -= speed
-				_animated_sprite.play("run_right")
+			_animated_sprite.play("run_right")
 	else:
 		_animated_sprite.stop()
 		
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		if rotation_degrees == 0:
-			if (is_on_floor()):
+			if is_on_floor():
 				velocity.y -= jump_speed
+			elif !double_jump_used:
+				velocity.y -= jump_speed/2
+				double_jump_used = true
 		else:
-			if (is_on_ceiling()):
+			if is_on_ceiling():
 				velocity.y += jump_speed
+			elif !double_jump_used:
+				velocity.y += jump_speed/2
+				double_jump_used = true
 			
 	if Input.is_action_just_pressed("invert_gravity"):
 		gravity *= -1
@@ -53,3 +59,7 @@ func get_input(delta):
 
 func _physics_process(delta):
 	get_input(delta)
+
+func reset():
+	position.x = 35
+	position.y = 558
