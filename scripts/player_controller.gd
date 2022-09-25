@@ -5,6 +5,7 @@ var jump_speed: int = 200
 var gravity: int = 200
 var velocity = Vector2()
 var double_jump_used: bool = false
+var nextLevel = String()
 
 onready var _animated_sprite = $AnimatedSprite
 
@@ -67,3 +68,20 @@ func reset():
 func camera_animation_y():
 	print("move")
 	$AnimationPlayer.play("top")
+
+func onLevelFinished():
+	var global = get_node("/root/Global")
+	speed = 0
+	jump_speed = 0
+	nextLevel = global.nextLevel
+	$ButtonMenu.visible = true
+	if nextLevel != "":
+		$ButtonNext.visible = true
+
+func _on_ButtonMenu_pressed():
+	get_tree().change_scene("res://levels/MainMenu.tscn")
+
+
+func _on_ButtonNext_pressed():
+	if nextLevel != "":
+		get_tree().change_scene(nextLevel)

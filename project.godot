@@ -11,7 +11,11 @@ config_version=4
 [application]
 
 config/name="Tddd 23"
-run/main_scene="res://levels/Level0.tscn"
+run/main_scene="res://levels/MainMenu.tscn"
+
+[autoload]
+
+Global="*res://Global.tscn"
 
 [gui]
 
