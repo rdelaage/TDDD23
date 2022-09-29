@@ -1,6 +1,7 @@
 extends Control
 
 func _on_Play_button_down():
+	var global = get_node("/root/Global")
 	get_tree().change_scene("res://levels/Level0.tscn")
 
 

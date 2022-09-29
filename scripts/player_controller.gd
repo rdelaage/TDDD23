@@ -62,8 +62,8 @@ func _physics_process(delta):
 	get_input(delta)
 
 func reset():
-	position.x = 35
-	position.y = 558
+	var global = get_node("/root/Global")
+	get_tree().change_scene(global.currentLevel)
 
 func camera_animation_y():
 	print("move")
