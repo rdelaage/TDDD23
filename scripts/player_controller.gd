@@ -8,6 +8,7 @@ var double_jump_used: bool = false
 var nextLevel = String()
 
 onready var _animated_sprite = $AnimatedSprite
+onready var _camera = $Camera2D
 
 func get_input(delta):
 	if double_jump_used:
@@ -54,7 +55,23 @@ func get_input(delta):
 		
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
-	pass
+	
+	var camera_target: int
+	var camera_distance: int = 100
+	var camera_speed: int = 2
+	var target: int = _camera.position.y
+	if velocity.y > 0:
+		camera_target = _camera.position.y + camera_distance
+		_camera.offset.y = min(_camera.offset.y + camera_speed, camera_target)
+	elif velocity.y < 0:
+		camera_target = _camera.position.y - camera_distance
+		_camera.offset.y = max(_camera.offset.y - camera_speed, camera_target)
+	elif is_on_floor():
+		camera_target = _camera.position.y - camera_distance
+		_camera.offset.y = max(_camera.offset.y - camera_speed, camera_target)
+	elif is_on_ceiling():
+		camera_target = _camera.position.y + camera_distance
+		_camera.offset.y = min(_camera.offset.y + camera_speed, camera_target)
 
 func _physics_process(delta):
 	get_input(delta)
