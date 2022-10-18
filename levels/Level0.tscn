@@ -345,7 +345,7 @@ shape = SubResource( 14 )
 position = Vector2( 496, 560 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 53, 558 )
+position = Vector2( 40, 568 )
 
 [node name="Finish_level" type="Area2D" parent="."]
 position = Vector2( 984, 568 )

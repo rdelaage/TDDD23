@@ -71,14 +71,14 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 17 )
-animation = "run_left"
+animation = "run_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
 shape = SubResource( 18 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 100, -90 )
+offset = Vector2( 100, -100 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
