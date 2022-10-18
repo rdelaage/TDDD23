@@ -24,10 +24,7 @@ func get_input(delta):
 			_animated_sprite.play("run_right")
 		else:
 			_animated_sprite.play("run_left")
-	else:
-		_animated_sprite.stop()
-		
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		if rotation_degrees == 0:
 			_animated_sprite.play("run_left")
@@ -35,6 +32,7 @@ func get_input(delta):
 			_animated_sprite.play("run_right")
 	else:
 		_animated_sprite.stop()
+		_animated_sprite.frame = 0
 		
 	if Input.is_action_just_pressed("jump"):
 		if rotation_degrees == 0:
