@@ -77,6 +77,11 @@ func onLevelFinished():
 	$ButtonMenu.visible = true
 	if nextLevel != "":
 		$ButtonNext.visible = true
+		
+func onGameFinished():
+	speed = 0
+	jump_speed = 0
+	$ButtonMenu.visible = true
 
 func _on_ButtonMenu_pressed():
 	get_tree().change_scene("res://levels/MainMenu.tscn")

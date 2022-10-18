@@ -7,7 +7,7 @@
 [ext_resource path="res://components/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://components/oneway.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/move_camera_top.gd" type="Script" id=7]
-[ext_resource path="res://scripts/Finish_level.gd" type="Script" id=8]
+[ext_resource path="res://scripts/Finish_level0.gd" type="Script" id=8]
 [ext_resource path="res://scripts/Level0.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
