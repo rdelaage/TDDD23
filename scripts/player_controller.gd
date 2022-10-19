@@ -6,11 +6,15 @@ var gravity: int = 200
 var velocity = Vector2()
 var double_jump_used: bool = false
 var nextLevel = String()
+var cooldown: float = 0
 
 onready var _animated_sprite = $AnimatedSprite
 onready var _camera = $Camera2D
 
 func get_input(delta):
+	if cooldown > 0:
+		cooldown -= delta
+
 	if double_jump_used:
 		if is_on_floor() and rotation_degrees == 0:
 			double_jump_used = false
@@ -49,9 +53,10 @@ func get_input(delta):
 				velocity.y += jump_speed/2
 				double_jump_used = true
 			
-	if Input.is_action_just_pressed("invert_gravity"):
+	if Input.is_action_just_pressed("invert_gravity") and cooldown <= 0:
 		gravity *= -1
 		rotation_degrees = fmod((rotation_degrees + 180), 360)
+		cooldown = 1
 		
 	velocity.y += gravity * delta
 	velocity = move_and_slide(velocity, Vector2.UP)
