@@ -62,7 +62,7 @@ func get_input(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	var camera_target: int
-	var camera_distance: int = 100
+	var camera_distance: int = 150
 	var camera_speed: int = 2
 	var target: int = _camera.position.y
 	if velocity.y > 0:
