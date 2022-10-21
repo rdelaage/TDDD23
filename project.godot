@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Tddd 23"
+config/name="Fall to the top"
 run/main_scene="res://levels/MainMenu.tscn"
 
 [autoload]
