@@ -86,7 +86,6 @@ func reset():
 	get_tree().change_scene(global.currentLevel)
 
 func camera_animation_y():
-	print("move")
 	$AnimationPlayer.play("top")
 
 func onLevelFinished():
